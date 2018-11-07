@@ -1,4 +1,4 @@
-# ubahn-info-share
+# ubahn-info-share-app
 
 With the support of the users I want to help people to get current incidents current incidents on the Ubahn lines, by incident I mean, malfunction, delay, unexpected out of service.
 
