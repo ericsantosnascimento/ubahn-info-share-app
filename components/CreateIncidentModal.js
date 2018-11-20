@@ -14,31 +14,30 @@ class CreateIncidentModal extends Component {
 
   render() {
     return (
+
       <View style={styles.container}>
+
         <Modal
           animationType="slide"
-          backdropOpacity={0.4}
-          style={styles.modalContainer}
+          backdropOpacity={0.3}
           isVisible={this.state.modalVisible}
           onBackdropPress={this.closeModal}
           onRequestClose={() => {Alert.alert('Modal has been closed.');
           }}>
-          <View style={{marginTop: 40}}>
-            <View>
-              <Text>Hello World!</Text>
 
-              <TouchableHighlight
-                onPress={() => {
-                  this.setModalVisible(!this.state.modalVisible);
-                }}>
-                <Text>Hide Modal</Text>
-              </TouchableHighlight>
-            </View>
+          <View style={styles.modalContainer}>
+
+              <Text>Create an incident</Text>
+
+              <TouchableOpacity style = {styles.btnClose} onPress={() => {this.setModalVisible(!this.state.modalVisible);}}>
+                <MaterialCommunityIcons size={26} name="close" color={'#fff'} />
+              </TouchableOpacity>
+
           </View>
         </Modal>
 
         <View style={styles.bottomContainer}>
-          <TouchableOpacity activeOpacity = { 0.8 } style = { styles.btn } onPress={() => {this.setModalVisible(true);}}>
+          <TouchableOpacity activeOpacity = { 0.8 } style = {styles.btnPlus} onPress={() => {this.setModalVisible(true);}}>
               <MaterialCommunityIcons size={36} name="plus" color={'#fff'} />
           </TouchableOpacity>
         </View>
@@ -55,21 +54,37 @@ const styles = StyleSheet.create({
   },
   modalContainer: {
     flex: 1,
-    width: 60,
-    height: 60,
+    backgroundColor:'#C0C0C0',
+    width: 360,
+    height: 500,
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   bottomContainer: {
     flex: 1,
     alignItems: 'flex-end',
     justifyContent: 'center'
   },
-  btn: {
+  btnPlus: {
     position: 'absolute',
     right: 25,
     bottom: 25,
     borderRadius: 30,
     width: 60,
     height: 60,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'rgba(0,0,0,0.7)',
+    // padding: 15
+  },
+  btnClose: {
+    position: 'absolute',
+    right: 2,
+    top: 2,
+    borderRadius: 30,
+    width: 28,
+    height: 28,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: 'rgba(0,0,0,0.7)',
